@@ -28,6 +28,7 @@ const people= [{
 function App() {
 
 
+  
   let adjective ='cool';
   let url = 'https://reactjs.org';
 
