@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import './NExpense.css'
 import ExForm from "./ExForm";
 
 const NExpense = (props) => {
+    const [isEditing, setEditing] = useState(false);
+
     const saveExpenseDataHandler = (enteredExData) => {
         const expenseData = {
             ...enteredExData,
@@ -13,9 +15,17 @@ const NExpense = (props) => {
 
     };
 
+    const startEditingHandler = () => {
+        setEditing(true);
+    }
+
+    const stopEditingHandler = () => {
+        setEditing(false);
+    }
     return (
         <div className='new-expense'>
-            <ExForm onSaveExpenseData={saveExpenseDataHandler}/>
+            {!isEditing && <button onClick={startEditingHandler}>Add New Expense</button>}
+            {isEditing && <ExForm onSaveExpenseData={saveExpenseDataHandler} onCancel={stopEditingHandler}/>}
 
         </div>
     )
