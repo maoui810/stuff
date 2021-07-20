@@ -1,7 +1,7 @@
 import React from 'react';
-import Chart from './Chart';
+import Chart from '../Chart/Chart'
 
-const ExpresesChart = (props) => {
+const ExpensesChart = (props) => {
 
     const chartDataPoints = [
         {label: 'Jan', value: 0},
@@ -23,7 +23,7 @@ const ExpresesChart = (props) => {
         chartDataPoints[expenseMonth].value += expense.amount;
     }
 
-    return <Chart dataPoints={chartDataPoints}/>;
+    return <Chart dataPs={chartDataPoints}/>
 };
 
-export default ExpresesChart;
+export default ExpensesChart;
